@@ -25,7 +25,7 @@ docker run appwrite/telegraf:v1.0.0
 
 ### Versioning
 
-This image versioning is following Appwrite server versioning. This means that if you use Appwrite server version 1.1.* , also use version 1.1.* of Appwrite MariaDB docker image.
+This image versioning is following Appwrite server versioning. This means that if you use Appwrite server version 1.1.* , also use version 1.1.* of Appwrite Telegraf docker image.
 
 ### Environment Variables
 

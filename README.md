@@ -1,4 +1,4 @@
-# Docker Telegraf
+# Docker Telegraf amazing
 
 ![Docker Pulls](https://img.shields.io/docker/pulls/appwrite/telegraf.svg)
 [![Discord](https://img.shields.io/discord/564160730845151244)](https://discord.gg/GSeTUeA)

@@ -1,4 +1,4 @@
-FROM telegraf:1.7
+FROM telegraf:1.15.3
 
 LABEL maintainer="team@appwrite.io"
 

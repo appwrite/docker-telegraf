@@ -1,9 +1,10 @@
 # Docker Telegraf
 
+[![Build Status](https://travis-ci.com/appwrite/docker-telegraf.svg?branch=main)](https://travis-ci.com/appwrite/docker-telegraf)
 ![Docker Pulls](https://img.shields.io/docker/pulls/appwrite/telegraf.svg)
 [![Discord](https://img.shields.io/discord/564160730845151244)](https://discord.gg/GSeTUeA)
 
-Telegraf container pre-configured for [Appwrite server](https://appwrite.io) installation. This container is only extending the official Telegraf docker image with Appwrite specific configuration settings, for a fresh installation of Telegraf use only [docker official image](https://hub.docker.com/_/telegraf).
+Telegraf Docker image pre-configured for [Appwrite server](https://appwrite.io) installation. This container is only extending the official Telegraf docker image with Appwrite specific configuration settings, for a fresh installation of Telegraf use only [docker official image](https://hub.docker.com/_/telegraf).
 
 ## Getting Started
 
@@ -23,13 +24,23 @@ In order to run this container you'll need docker installed.
 docker run appwrite/telegraf
 ```
 
-### Versioning
-
-This image versioning is following Appwrite server versioning. This means that if you use Appwrite server version 1.1.* , also use version 1.1.* of Appwrite Telegraf docker image.
-
 ### Environment Variables
 
 This container supports all environment variables supplied by the official Telegraf Docker image.
+
+### Build / Release
+
+```
+docker build --tag appwrite/telegraf:0.0.0 .
+docker push appwrite/telegraf:0.0.0
+```
+
+Multi-arch build (experimental using [buildx](https://github.com/docker/buildx)):
+
+```
+docker buildx create --use
+docker buildx build --platform linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64 --tag appwrite/telegraf:0.0.0 . --push
+```
 
 ## Find Us
 

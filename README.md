@@ -1,6 +1,6 @@
 # Docker Telegraf
 
-[![Build Status](https://travis-ci.com/appwrite/docker-telegraf.svg?branch=main)](https://travis-ci.com/appwrite/docker-telegraf)
+[![Build Status](https://travis-ci.com/appwrite/docker-telegraf.svg?branch=master)](https://travis-ci.com/appwrite/docker-telegraf)
 ![Docker Pulls](https://img.shields.io/docker/pulls/appwrite/telegraf.svg)
 [![Discord](https://img.shields.io/discord/564160730845151244)](https://discord.gg/GSeTUeA)
 

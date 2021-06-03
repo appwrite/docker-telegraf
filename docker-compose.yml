@@ -9,3 +9,6 @@ services:
       - "8125:8125/udp"
       - "8092:8092/udp"
       - "8094:8094/tcp"
+    environment: 
+      - _APP_INFLUXDB_HOST=8086
+      - _APP_INFLUXDB_PORT=influxdb

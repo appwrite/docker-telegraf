@@ -11,7 +11,7 @@ RUN apk add --no-cache \
     rm -rf /var/cache/apk/* && \
     update-ca-certificates 2>/dev/null
 
-ENV TELEGRAF_VERSION 1.15.3
+ENV TELEGRAF_VERSION 1.18.2
 
 RUN set -ex && \
     mkdir ~/.gnupg; \

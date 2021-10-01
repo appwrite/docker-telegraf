@@ -1,0 +1,84 @@
+name: "🐛 Bug Report"
+description: "Submit a bug report to help us improve"
+title: "🐛 Bug Report:"
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out our bug report form 🙏
+  - type: textarea
+    id: steps-to-reproduce
+    validations:
+      required: true
+    attributes:
+      label: "👟 Reproduction steps"
+      description: "How do you trigger this bug? Please walk us through it step by step."
+      value: |
+        1.
+        2.
+        3.
+        ...
+      render: bash
+  - type: textarea
+    id: expected-behavior
+    validations:
+      required: true
+    attributes:
+      label: "👍 Expected behavior"
+      description: "What did you think would happen?"
+      placeholder: "It should ..."
+  - type: textarea
+    id: actual-behavior
+    validations:
+      required: true
+    attributes:
+      label: "👎 Actual Behavior"
+      description: "What did actually happen? Add screenshots, if applicable."
+      placeholder: "It actually ..."
+  - type: textarea
+    id: logs
+    validations:
+      required: false
+    attributes:
+      label: "🪵 Logs"
+      description: "If you have logs, put them here"
+      render: shell
+  - type: input
+    id: docker-version
+    attributes:
+      label: "🐳 Docker version"
+      description: "What docker version are you running?, run `docker version --format '{{.Server.Version}}'`"
+    validations:
+      required: true
+  - type: input
+    id: image-taf
+    attributes:
+      label: "📸 Image tag"
+      description: "Tag of the docker image, `docker images` (NOTE: if using `latest` tag, replace this by the image ID, putting `latest` here is unhelpful as that tag moves)"
+    validations:
+      required: true
+  - type: checkboxes
+    id: telegraf
+    attributes:
+      label: "❓ Are you sure the bug is related to the appwrite part of the image?"
+      description: "This repo is dedicated to `appwrite` issues in this image, `telegraf` support is conducted through https://github.com/influxdata/telegraf and main `appwrite` support is done at https://github.com/appwrite/appwrite"
+      options:
+        - label: "This is not a `telegraf` issue"
+          required: true
+  - type: checkboxes
+    id: no-duplicate-issues
+    attributes:
+      label: "👀 Have you spent some time to check if this issue has been raised before?"
+      description: "Have you Googled for a similar issue or checked our older issues for a similar bug?"
+      options:
+        - label: "I checked and didn't find similar issues"
+          required: true
+  - type: checkboxes
+    id: read-code-of-conduct
+    attributes:
+      description: "This is our [Code of Conduct](https://github.com/appwrite/appwrite/blob/master/CODE_OF_CONDUCT.md)."
+      label: "🏢 Have you read the Code of Conduct?"
+      options:
+        - label: "I read the Code of Conduct"
+          required: true

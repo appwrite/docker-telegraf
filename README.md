@@ -53,4 +53,4 @@ docker buildx build --platform linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64
 
 ## Copyright and license
 
-The MIT License (MIT) [http://www.opensource.org/licenses/mit-license.php](http://www.opensource.org/licenses/mit-license.php)
+The MIT License (MIT) [http://www.opensource.org/licenses/mit-license.php](http://www.opensource.org/licenses/mit-license.php).

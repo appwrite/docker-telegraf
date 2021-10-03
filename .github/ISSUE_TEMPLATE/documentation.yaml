@@ -15,13 +15,6 @@ body:
       label: '💭 Description'
       description: 'A clear and concise description of what the issue is.'
       placeholder: 'Documentation should not ...'
-  - type: input
-    id: issue-location
-    validations:
-      required: true
-    attributes:
-      label: '🗺️ Path of the documentation issue'
-      description: "Name/Path of the relevant file"
   - type: checkboxes
     id: no-duplicate-issues
     attributes:
@@ -33,9 +26,8 @@ body:
   - type: checkboxes
     id: read-code-of-conduct
     attributes:
-      description: 'This is our [Code of Conduct](https://github.com/appwrite/appwrite/blob/master/CODE_OF_CONDUCT.md).'
       label: '🏢 Have you read the Code of Conduct?'
       options:
-        - label: 'I read the Code of Conduct'
+        - label: 'I read the [Code of Conduct](https://github.com/appwrite/appwrite/blob/HEAD/CODE_OF_CONDUCT.md)'
           required: true
 

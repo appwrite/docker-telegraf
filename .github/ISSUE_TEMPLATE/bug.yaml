@@ -14,12 +14,7 @@ body:
     attributes:
       label: "👟 Reproduction steps"
       description: "How do you trigger this bug? Please walk us through it step by step."
-      value: |
-        1.
-        2.
-        3.
-        ...
-      render: bash
+      placeholder: "When I ..."
   - type: textarea
     id: expected-behavior
     validations:
@@ -36,28 +31,52 @@ body:
       label: "👎 Actual Behavior"
       description: "What did actually happen? Add screenshots, if applicable."
       placeholder: "It actually ..."
-  - type: textarea
-    id: logs
-    validations:
-      required: false
-    attributes:
-      label: "🪵 Logs"
-      description: "If you have logs, put them here"
-      render: shell
   - type: input
     id: docker-version
     attributes:
       label: "🐳 Docker version"
-      description: "What docker version are you running?, run `docker version --format '{{.Server.Version}}'`"
+      description: "What docker version are you running?, run `docker version --format '{{.Server.Version}}'` to get that information"
     validations:
       required: true
+  - type: dropdown
+    id: operating-system
+    attributes:
+      label: "💻 Operating system"
+      description: "What OS is your server / device running on?"
+      options:
+        - Linux
+        - MacOS
+        - Windows
+        - Something else
   - type: input
-    id: image-taf
+    id: image-tag
     attributes:
       label: "📸 Image tag"
-      description: "Tag of the docker image, `docker images` (NOTE: if using `latest` tag, replace this by the image ID, putting `latest` here is unhelpful as that tag moves)"
+      description: "Tag of the docker image, as given by `docker images` (NOTE: if using `latest` tag, replace this by the image ID, putting `latest` here is unhelpful as that tag moves)"
     validations:
       required: true
+  - type: dropdown
+    id: appwrite-version
+    attributes:
+      label: "🎲 Appwrite version"
+      description: "What version of Appwrite are you running?"
+      options:
+        - Version 0.10.x
+        - Version 0.9.x
+        - Version 0.8.x
+        - Version 0.7.x
+        - Version 0.6.x
+        - Different version (specify in environment)
+    validations:
+      required: true
+  - type: textarea
+    id: enviromnemt
+    validations:
+      required: false
+    attributes:
+      label: "🧱 Your Environment"
+      description: "Is your environment customized in any way?"
+      placeholder: "I use Cloudflare for ..."
   - type: checkboxes
     id: telegraf
     attributes:
@@ -77,8 +96,7 @@ body:
   - type: checkboxes
     id: read-code-of-conduct
     attributes:
-      description: "This is our [Code of Conduct](https://github.com/appwrite/appwrite/blob/master/CODE_OF_CONDUCT.md)."
       label: "🏢 Have you read the Code of Conduct?"
       options:
-        - label: "I read the Code of Conduct"
+        - label: "I read the [Code of Conduct](https://github.com/appwrite/appwrite/blob/HEAD/CODE_OF_CONDUCT.md)"
           required: true

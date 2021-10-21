@@ -14,7 +14,7 @@ RUN apk add --no-cache \
 ENV TELEGRAF_VERSION 1.20.2
 
 RUN set -ex && \
-    mkdir ~/.gnupg; \
+    mkdir ~/.gnupg; chmod  600 ~/.gnupg; \
     echo "disable-ipv6" >> ~/.gnupg/dirmngr.conf; \
     apk add --no-cache --virtual .build-deps wget gnupg tar && \
     for key in \

@@ -14,7 +14,7 @@ RUN apk add --no-cache \
 ENV TELEGRAF_VERSION 1.20.2
 
 RUN set -ex && \
-    mkdir ~/.gnupg; chmod  600 ~/.gnupg; \
+    mkdir ~/.gnupg; chmod 600 ~/.gnupg; \
     echo "disable-ipv6" >> ~/.gnupg/dirmngr.conf; \
     apk add --no-cache --virtual .build-deps wget gnupg tar && \
     wget -qO- https://repos.influxdata.com/influxdb.key | gpg --import && \

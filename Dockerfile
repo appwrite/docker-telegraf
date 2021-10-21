@@ -20,9 +20,10 @@ RUN set -ex && \
     for key in \
         05CE15085FC09D18E99EFB22684A14CF2582E0C5 ; \
     do \
-        gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$key" || \
-        gpg --keyserver pgp.mit.edu --recv-keys "$key" || \
-        gpg --keyserver keyserver.pgp.com --recv-keys "$key" ; \
+        # gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$key" || \
+        # gpg --keyserver pgp.mit.edu --recv-keys "$key" || \
+        # gpg --keyserver keyserver.pgp.com --recv-keys "$key" ; \
+        gpg --keyserver pgp.mit.edu --recv-keys "$key"; \
     done && \
     [ "$(uname -m)" = x86_64 ] && suffix="_static_linux_amd64.tar.gz" || suffix="_linux_armhf.tar.gz"; \
     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf-${TELEGRAF_VERSION}${suffix}.asc && \

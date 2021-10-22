@@ -1,4 +1,4 @@
-FROM alpine:3.12
+FROM alpine:3.14
 
 LABEL maintainer="team@appwrite.io"
 
@@ -11,19 +11,13 @@ RUN apk add --no-cache \
     rm -rf /var/cache/apk/* && \
     update-ca-certificates 2>/dev/null
 
-ENV TELEGRAF_VERSION 1.18.2
+ENV TELEGRAF_VERSION 1.20.2
 
 RUN set -ex && \
-    mkdir ~/.gnupg; \
+    mkdir ~/.gnupg; chmod 600 ~/.gnupg; \
     echo "disable-ipv6" >> ~/.gnupg/dirmngr.conf; \
     apk add --no-cache --virtual .build-deps wget gnupg tar && \
-    for key in \
-        05CE15085FC09D18E99EFB22684A14CF2582E0C5 ; \
-    do \
-        gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$key" || \
-        gpg --keyserver pgp.mit.edu --recv-keys "$key" || \
-        gpg --keyserver keyserver.pgp.com --recv-keys "$key" ; \
-    done && \
+    wget -qO- https://repos.influxdata.com/influxdb.key | gpg --import && \
     [ "$(uname -m)" = x86_64 ] && suffix="_static_linux_amd64.tar.gz" || suffix="_linux_armhf.tar.gz"; \
     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf-${TELEGRAF_VERSION}${suffix}.asc && \
     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf-${TELEGRAF_VERSION}${suffix} && \

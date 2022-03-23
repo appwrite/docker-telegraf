@@ -1,10 +1,11 @@
-FROM alpine:3.15
+FROM alpine:3.15.1
 
 LABEL maintainer="team@appwrite.io"
 
 RUN echo 'hosts: files dns' >> /etc/nsswitch.conf
 
-RUN apk add --no-cache \
+RUN apk -U upgrade && \
+    apk add --no-cache \
         tzdata \
         bash \
         ca-certificates && \
